@@ -24,6 +24,7 @@ func (s server) NameToUpperCase(ctx context.Context, req *pb.NameReq) (*pb.NameR
 	name := req.GetName()
 
 	name = strings.ToUpper(name)
+	name += " (GitOps)"
 
 	return &pb.NameResp{Name: name}, nil
 }
